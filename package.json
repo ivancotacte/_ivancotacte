@@ -7,12 +7,17 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
+  "author": {
+    "name": "Ivan Cotacte",
+    "email": "cotactearmenion@gmail.com"
+  },
   "license": "ISC",
   "devDependencies": {
     "prettier": "3.1.0"
   },
   "dependencies": {
+    "api": "^6.1.1",
+    "axios": "^1.6.2",
     "bluebird": "^2.11.0",
     "cheerio": "^0.22.0",
     "https-proxy-agent": "^4.0.0",

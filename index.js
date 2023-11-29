@@ -3,6 +3,7 @@ const config = require("./config");
 
 listen(async (api, event) => {
   if (event.type === "message") {
+    require("./handlers/handleAdmin.js")({ api, event, config });
     require("./handlers/handleMessage.js")({ api, event, config });
     if (event.body === "!ping") {
       api.sendMessage("Pong!", event.threadID, event.messageID);
