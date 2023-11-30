@@ -8,8 +8,8 @@ const proxy = {
   protocol: "socks5",
   host: "104.36.180.119",
   port: 1080,
-  username: "Xp4gxI2zX",
-  password: "0NH2td8J",
+  username: "6tZpC92iwZ",
+  password: "MvMGNKgvXV",
 };
 
 const local = {
