@@ -7,13 +7,13 @@ module.exports = async ({ api, event }) => {
       "https://api--v1-shoti.vercel.app/api/v1/get",
       {
         apikey: "$shoti-1hg36l9b797ba14650g",
-      }
+      },
     );
     if (response.data.code !== 200) {
       api.sendMessage(
         `API ERROR: ${response.data}`,
         event.threadID,
-        event.messageID
+        event.messageID,
       );
       return;
     }
@@ -27,7 +27,7 @@ module.exports = async ({ api, event }) => {
           attachment: fs.createReadStream(__dirname + "/../cache/shoti.mp4"),
         },
         event.threadID,
-        event.messageID
+        event.messageID,
       );
     });
     file.on("error", (err) => {
@@ -39,7 +39,7 @@ module.exports = async ({ api, event }) => {
     api.sendMessage(
       "An error occurred while generating video:" + error,
       event.threadID,
-      event.messageID
+      event.messageID,
     );
   }
 };
