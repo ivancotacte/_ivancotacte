@@ -25,6 +25,7 @@
     "mqtt": "^3.0.0",
     "npmlog": "^1.2.0",
     "request": "^2.53.0",
-    "websocket-stream": "^5.5.0"
+    "websocket-stream": "^5.5.0",
+    "youtubei.js": "^8.0.0"
   }
 }
