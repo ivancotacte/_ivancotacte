@@ -1,8 +1,6 @@
 const fs = require("fs");
 const path = require("path");
-const login = require("./fb-chat-api");
-
-const appStateFile = "./appstate.json";
+const login = require("fca-project-orion");
 
 const proxy = {
   protocol: "socks5",
@@ -22,12 +20,20 @@ const local = {
   },
 };
 
+function loadAppState() {
+    try {
+        const appStatePath = path.join(__dirname, "appstate.json");
+        return JSON.parse(fs.readFileSync(appStatePath, "utf8"));
+    } catch (error) {
+        console.error("Error loading app state:", error);
+        return null;
+    }
+}
+
 async function listen(orion) {
   try {
-    const appStatePath = path.join(__dirname, appStateFile);
-    const credentials = JSON.parse(fs.readFileSync(appStatePath, "utf8"));
     login(
-      { appState: credentials, proxy: proxy },
+      { appState: loadAppState(), proxy: proxy },
       async (err, api) => {
         try {
           if (err) return console.error(err);
